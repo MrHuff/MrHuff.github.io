@@ -55,6 +55,9 @@ test("server-renders Robert Hu's academic website", async () => {
   assert.doesNotMatch(html, /iZettle/i);
   assert.match(html, /\/institutions\/kth\.svg/i);
   assert.match(html, /\/institutions\/sse\.svg/i);
+  assert.match(html, /2017 — 2018/i);
+  assert.match(html, /Data Scientist/i);
+  assert.doesNotMatch(html, /Data Analyst/i);
   assert.match(
     html,
     /Supervised by Dino Sejdinovic, Robin Evans, and Geoff Nicholls\./i,

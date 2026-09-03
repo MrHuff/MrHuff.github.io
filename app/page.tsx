@@ -261,8 +261,8 @@ const experience: ExperienceItem[] = [
     institutions: ["hm", "oxford"],
   },
   {
-    period: "2016 — 2018",
-    role: "Data Scientist and Data Analyst",
+    period: "2017 — 2018",
+    role: "Data Scientist",
     place: "H&M, Stockholm",
     summary:
       "Built forecasting, experimentation, and decision-support systems.",
