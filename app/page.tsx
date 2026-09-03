@@ -428,6 +428,10 @@ export default function Home() {
                     cause and effect rather than correlation alone—making their
                     predictions better grounded and easier to interpret.
                   </p>
+                  <p className="current-focus">
+                    <strong>Current focus.</strong> Making low-precision training
+                    and inference stable and efficient on modern hardware.
+                  </p>
                 </article>
 
                 <article

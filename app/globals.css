@@ -295,6 +295,18 @@ h2 {
   margin: 13px 0 0;
 }
 
+.research-summary .current-focus {
+  margin-top: 17px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.current-focus strong {
+  color: var(--text);
+}
+
 .alternate-summary {
   border-left-color: var(--strawberry);
 }
