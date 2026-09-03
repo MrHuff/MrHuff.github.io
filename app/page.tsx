@@ -69,7 +69,10 @@ type EducationItem = {
   period: string;
   degree: string;
   school: string;
-  note?: string;
+  supervisors?: {
+    name: string;
+    href: string;
+  }[];
   institutions: InstitutionKey[];
 };
 
@@ -286,7 +289,20 @@ const education: EducationItem[] = [
     period: "2018 — 2022",
     degree: "DPhil in Machine Learning and Statistics",
     school: "University of Oxford",
-    note: "Supervised by Dino Sejdinovic, Robin Evans, and Geoff Nicholls.",
+    supervisors: [
+      {
+        name: "Dino Sejdinovic",
+        href: "https://researchers.adelaide.edu.au/profile/dino.sejdinovic",
+      },
+      {
+        name: "Robin Evans",
+        href: "https://www.stats.ox.ac.uk/people/robin-evans",
+      },
+      {
+        name: "Geoff Nicholls",
+        href: "https://www.stats.ox.ac.uk/people/geoff-nicholls",
+      },
+    ],
     institutions: ["oxford"],
   },
   {
@@ -613,8 +629,22 @@ export default function Home() {
                         <p className="item-date">{item.period}</p>
                         <h4>{item.degree}</h4>
                         <p>{item.school}</p>
-                        {item.note && (
-                          <p className="education-note">{item.note}</p>
+                        {item.supervisors && (
+                          <p className="education-note">
+                            Supervised by{" "}
+                            {item.supervisors.map((supervisor, index) => (
+                              <span key={supervisor.name}>
+                                {index > 0 &&
+                                  (index === item.supervisors!.length - 1
+                                    ? ", and "
+                                    : ", ")}
+                                <ExternalLink href={supervisor.href}>
+                                  {supervisor.name}
+                                </ExternalLink>
+                              </span>
+                            ))}
+                            .
+                          </p>
                         )}
                       </div>
                       <InstitutionMarks institutions={item.institutions} />
