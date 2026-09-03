@@ -394,7 +394,7 @@ export default function Home() {
                 <h2>
                   {researchMode === "main"
                     ? "Research thesis"
-                    : "Other research"}
+                    : "Second strand"}
                 </h2>
                 <button
                   className="mode-toggle"
