@@ -344,7 +344,7 @@ export default function Home() {
             href="#top"
             aria-label="Robert Hu, back to top"
           >
-            God dag
+            Var hälsad
             <span className="header-treat" role="img" aria-label="strawberry matcha">
               🍓🍵
             </span>
@@ -362,9 +362,6 @@ export default function Home() {
             <div className="hero-copy">
               <p className="eyebrow">Machine learning researcher · London</p>
               <h1 id="intro-title">Robert Hu</h1>
-              <p className="research-line">
-                Systems and numerics for efficient learning.
-              </p>
               <p className="link-line" aria-label="Profile links">
                 <ExternalLink href={links.scholar}>Google Scholar</ExternalLink>
                 <ExternalLink href={links.github}>GitHub</ExternalLink>
