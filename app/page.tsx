@@ -132,7 +132,7 @@ const primaryWork: WorkGroup[] = [
 ];
 
 const predictiveWork: WorkGroup = {
-  title: "Predictive ML, recommendation, and decisions",
+  title: "Predictive ML and recommender systems",
   description:
     "A second strand on preferences, uncertainty, survival modelling, and statistically principled prediction.",
   publications: [
@@ -440,10 +440,10 @@ export default function Home() {
                   hidden={researchMode !== "predictive"}
                 >
                   <p className="section-label">Second strand</p>
-                  <h3>Predictive ML and recommendation.</h3>
+                  <h3>Predictive ML and recommender systems.</h3>
                   <p>
                     I also work on traditional predictive machine learning:
-                    preferences and recommendation, uncertainty, survival
+                    recommender systems, uncertainty, survival
                     modelling, forecasting, advertising, and deployed decision
                     systems.
                   </p>
