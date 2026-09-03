@@ -476,6 +476,14 @@ h2 {
   font-size: 12px;
 }
 
+.personal-note {
+  margin: 28px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .contact p {
   margin: 14px 0 0;
 }

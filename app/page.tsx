@@ -616,6 +616,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <p className="personal-note">
+              Away from research, I’m interested in MMA, spicy food, fine
+              dining, real estate, and board games.
+            </p>
           </section>
 
           <section className="section contact" id="contact">
