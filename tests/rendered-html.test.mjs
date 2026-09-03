@@ -69,6 +69,7 @@ test("server-renders Robert Hu's academic website", async () => {
   assert.match(html, /github\.com\/MrHuff/i);
   assert.match(html, /robert\.stats\.hu/i);
   assert.match(html, /\[at\]/i);
+  assert.doesNotMatch(html, /The best way to reach me is by email/i);
   assert.doesNotMatch(html, /mailto:/i);
   assert.doesNotMatch(html, /robert\.stats\.hu@gmail\.com/i);
   assert.match(html, /application\/ld\+json/i);

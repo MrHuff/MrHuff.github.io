@@ -627,7 +627,6 @@ export default function Home() {
 
           <section className="section contact" id="contact">
             <h2>Contact</h2>
-            <p>The best way to reach me is by email.</p>
             <p className="email-address">
               robert.stats.hu <span>[at]</span> gmail <span>[dot]</span> com
             </p>
