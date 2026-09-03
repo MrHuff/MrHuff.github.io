@@ -390,6 +390,64 @@ h2 {
   border-bottom: 1px solid var(--line);
 }
 
+.plain-list .institution-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+}
+
+.institution-marks {
+  display: flex;
+  min-width: 42px;
+  min-height: 38px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  padding-top: 2px;
+}
+
+.institution-mark {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.institution-mark img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.institution-mark--graphcore,
+.institution-mark--hm,
+.institution-mark--kth,
+.institution-mark--sse {
+  width: 36px;
+  height: 36px;
+}
+
+.institution-mark--amazon {
+  width: 62px;
+  height: 30px;
+}
+
+.institution-mark--oxford {
+  width: 76px;
+  height: 31px;
+}
+
+.institution-mark--izettle {
+  width: 64px;
+  height: 28px;
+}
+
 .plain-list p {
   margin: 4px 0 0;
   font-size: 13px;
@@ -495,6 +553,18 @@ footer p {
 
   .background-layout {
     gap: 28px;
+  }
+
+  .plain-list .institution-entry {
+    gap: 12px;
+  }
+
+  .institution-marks {
+    gap: 6px;
+  }
+
+  .institution-mark--oxford {
+    width: 64px;
   }
 
   footer {

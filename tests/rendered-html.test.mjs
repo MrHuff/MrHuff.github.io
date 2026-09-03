@@ -48,6 +48,13 @@ test("server-renders Robert Hu's academic website", async () => {
   assert.doesNotMatch(html, /God dag/i);
   assert.doesNotMatch(html, /Strawberry matcha enthusiast/i);
   assert.match(html, /Portrait of Robert Hu/i);
+  assert.match(html, /\/institutions\/graphcore\.svg/i);
+  assert.match(html, /\/institutions\/amazon\.png/i);
+  assert.match(html, /\/institutions\/oxford\.svg/i);
+  assert.match(html, /\/institutions\/hm\.png/i);
+  assert.match(html, /\/institutions\/izettle\.svg/i);
+  assert.match(html, /\/institutions\/kth\.svg/i);
+  assert.match(html, /\/institutions\/sse\.svg/i);
   assert.match(html, /UE5M3 FP4 Block Scaling/i);
   assert.match(html, /Google Scholar/i);
   assert.match(html, /github\.com\/MrHuff/i);

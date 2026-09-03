@@ -24,6 +24,54 @@ type WorkGroup = {
   code: CodeProject[];
 };
 
+const institutionMarks = {
+  graphcore: {
+    label: "Graphcore",
+    src: "/institutions/graphcore.svg",
+  },
+  amazon: {
+    label: "Amazon",
+    src: "/institutions/amazon.png",
+  },
+  oxford: {
+    label: "University of Oxford",
+    src: "/institutions/oxford.svg",
+  },
+  hm: {
+    label: "H&M",
+    src: "/institutions/hm.png",
+  },
+  izettle: {
+    label: "iZettle",
+    src: "/institutions/izettle.svg",
+  },
+  kth: {
+    label: "KTH Royal Institute of Technology",
+    src: "/institutions/kth.svg",
+  },
+  sse: {
+    label: "Stockholm School of Economics",
+    src: "/institutions/sse.svg",
+  },
+} as const;
+
+type InstitutionKey = keyof typeof institutionMarks;
+
+type ExperienceItem = {
+  period: string;
+  role: string;
+  place: string;
+  summary: string;
+  institutions: InstitutionKey[];
+};
+
+type EducationItem = {
+  period: string;
+  degree: string;
+  school: string;
+  institutions: InstitutionKey[];
+};
+
 const links = {
   scholar: "https://scholar.google.com/citations?user=SaxR4ugAAAAJ&hl=en",
   github: "https://github.com/MrHuff",
@@ -183,13 +231,14 @@ const predictiveWork: WorkGroup = {
   ],
 };
 
-const experience = [
+const experience: ExperienceItem[] = [
   {
     period: "2025 — 2026",
     role: "Research Scientist",
     place: "Graphcore, London",
     summary:
       "Research on low-precision pre-training, GPU kernels, and hardware-aware attention.",
+    institutions: ["graphcore"],
   },
   {
     period: "2022 — 2025",
@@ -197,12 +246,14 @@ const experience = [
     place: "Amazon, London",
     summary:
       "Developed and deployed language-model and advertising-auction systems.",
+    institutions: ["amazon"],
   },
   {
     period: "2022",
     role: "Postdoctoral Research Assistant",
     place: "University of Oxford",
     summary: "Worked on survival analysis for genomic data.",
+    institutions: ["oxford"],
   },
   {
     period: "2018 — 2022",
@@ -210,6 +261,7 @@ const experience = [
     place: "H&M and University of Oxford",
     summary:
       "Combined statistical research with large-scale forecasting and churn modelling.",
+    institutions: ["hm", "oxford"],
   },
   {
     period: "2016 — 2018",
@@ -217,29 +269,34 @@ const experience = [
     place: "H&M and iZettle, Stockholm",
     summary:
       "Built forecasting, experimentation, and decision-support systems.",
+    institutions: ["hm", "izettle"],
   },
 ];
 
-const education = [
+const education: EducationItem[] = [
   {
     period: "2018 — 2022",
     degree: "DPhil in Machine Learning and Statistics",
     school: "University of Oxford",
+    institutions: ["oxford"],
   },
   {
     period: "2014 — 2016",
     degree: "MSc in Mathematical Statistics",
     school: "KTH Royal Institute of Technology",
+    institutions: ["kth"],
   },
   {
     period: "2014 — 2017",
     degree: "BSc in Business and Economics",
     school: "Stockholm School of Economics",
+    institutions: ["sse"],
   },
   {
     period: "2011 — 2014",
     degree: "BSc in Engineering Physics",
     school: "KTH Royal Institute of Technology",
+    institutions: ["kth"],
   },
 ];
 
@@ -299,6 +356,26 @@ function RelatedCode({ projects }: { projects: CodeProject[] }) {
         </span>
       ))}
     </p>
+  );
+}
+
+function InstitutionMarks({
+  institutions,
+}: {
+  institutions: InstitutionKey[];
+}) {
+  return (
+    <div className="institution-marks" aria-hidden="true">
+      {institutions.map((id) => {
+        const institution = institutionMarks[id];
+
+        return (
+          <span className={`institution-mark institution-mark--${id}`} key={id}>
+            <img src={institution.src} alt="" title={institution.label} />
+          </span>
+        );
+      })}
+    </div>
   );
 }
 
@@ -502,11 +579,17 @@ export default function Home() {
                 </div>
                 <div className="plain-list">
                   {experience.map((item) => (
-                    <article key={`${item.period}-${item.role}`}>
-                      <p className="item-date">{item.period}</p>
-                      <h4>{item.role}</h4>
-                      <p className="item-place">{item.place}</p>
-                      <p>{item.summary}</p>
+                    <article
+                      className="institution-entry"
+                      key={`${item.period}-${item.role}`}
+                    >
+                      <div className="institution-copy">
+                        <p className="item-date">{item.period}</p>
+                        <h4>{item.role}</h4>
+                        <p className="item-place">{item.place}</p>
+                        <p>{item.summary}</p>
+                      </div>
+                      <InstitutionMarks institutions={item.institutions} />
                     </article>
                   ))}
                 </div>
@@ -516,10 +599,13 @@ export default function Home() {
                 <h3 className="subheading">Education</h3>
                 <div className="plain-list education-list">
                   {education.map((item) => (
-                    <article key={item.degree}>
-                      <p className="item-date">{item.period}</p>
-                      <h4>{item.degree}</h4>
-                      <p>{item.school}</p>
+                    <article className="institution-entry" key={item.degree}>
+                      <div className="institution-copy">
+                        <p className="item-date">{item.period}</p>
+                        <h4>{item.degree}</h4>
+                        <p>{item.school}</p>
+                      </div>
+                      <InstitutionMarks institutions={item.institutions} />
                     </article>
                   ))}
                 </div>
