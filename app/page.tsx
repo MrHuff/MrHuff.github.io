@@ -429,8 +429,9 @@ export default function Home() {
                     predictions better grounded and easier to interpret.
                   </p>
                   <p className="current-focus">
-                    <strong>Current focus.</strong> Making low-precision training
-                    and inference stable and efficient on modern hardware.
+                    <strong>Current focus.</strong> Low-precision training and
+                    inference—particularly FP4—with an emphasis on stability and
+                    hardware efficiency.
                   </p>
                 </article>
 

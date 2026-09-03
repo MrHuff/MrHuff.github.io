@@ -39,7 +39,7 @@ test("server-renders Robert Hu's academic website", async () => {
   assert.match(html, /Primary direction/i);
   assert.match(html, /Predictive ML and recommendation/i);
   assert.match(html, /infer cause and effect rather than correlation alone/i);
-  assert.match(html, /Making low-precision training and inference stable and efficient/i);
+  assert.match(html, /particularly FP4/i);
   assert.match(html, /aria-pressed="false"/i);
   assert.match(html, /🍓🍵/u);
   assert.doesNotMatch(html, /Strawberry matcha enthusiast/i);
