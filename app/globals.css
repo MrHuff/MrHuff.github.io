@@ -156,13 +156,6 @@ h1 {
   line-height: 1.28;
 }
 
-.intro-copy {
-  max-width: 650px;
-  margin: 17px 0 0;
-  color: #3f3f3f;
-  font-size: 16px;
-}
-
 .link-line {
   display: flex;
   flex-wrap: wrap;

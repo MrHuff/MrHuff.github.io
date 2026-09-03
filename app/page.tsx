@@ -365,11 +365,6 @@ export default function Home() {
               <p className="research-line">
                 Systems and numerics for efficient learning.
               </p>
-              <p className="intro-copy">
-                I work on the systems and numerical foundations of large-scale
-                learning, and on methods for grounding and interpreting what
-                models learn.
-              </p>
               <p className="link-line" aria-label="Profile links">
                 <ExternalLink href={links.scholar}>Google Scholar</ExternalLink>
                 <ExternalLink href={links.github}>GitHub</ExternalLink>
