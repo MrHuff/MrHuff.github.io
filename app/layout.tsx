@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mrhuff.github.io"),
   title: "Robert Hu — Machine Learning Researcher",
   description:
-    "Robert Hu works on systems and numerics for efficient learning, and on methods for grounding and interpreting what models learn.",
+    "Robert Hu works on systems and numerics for efficient learning, causal grounding, and interpretable machine learning.",
   authors: [{ name: "Robert Hu", url: "https://mrhuff.github.io/" }],
   creator: "Robert Hu",
   keywords: [

@@ -185,27 +185,6 @@ h1 {
   object-position: center 18%;
 }
 
-.portrait figcaption {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.matcha-thumb {
-  flex: none;
-  width: 26px;
-  height: 26px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background-image: url("/og-v2.png");
-  background-position: 89% center;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-}
-
 .section {
   padding: 50px 0 54px;
   border-top: 1px solid var(--line);

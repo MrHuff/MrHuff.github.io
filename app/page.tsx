@@ -382,10 +382,6 @@ export default function Home() {
                 width="800"
                 height="1200"
               />
-              <figcaption>
-                <span className="matcha-thumb" aria-hidden="true" />
-                Strawberry matcha enthusiast.
-              </figcaption>
             </figure>
           </section>
 
@@ -427,9 +423,10 @@ export default function Home() {
                   <p>
                     Scaling is most useful when computation is efficient. I study
                     stable numerics and hardware-aware algorithms for pre-training
-                    and inference. The longer-term aim is to connect efficient
-                    scale with interpretability, and ground models by teaching
-                    them how to infer causal relationships.
+                    and inference. My longer-term goal is to bring these ideas
+                    together: scale models efficiently, then teach them to infer
+                    cause and effect rather than correlation alone—making their
+                    predictions better grounded and easier to interpret.
                   </p>
                 </article>
 
