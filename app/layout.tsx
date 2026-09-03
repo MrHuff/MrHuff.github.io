@@ -3,9 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mrhuff.github.io"),
-  title: "Robert Hu — Machine Learning Research Scientist",
+  title: "Robert Hu — Machine Learning Researcher",
   description:
-    "Robert Hu is a research scientist working on FP4 pretraining, CUDA kernels, long-context attention, causal inference, and scalable statistical machine learning.",
+    "Robert Hu works on systems and numerical methods for efficient pre-training and inference, causally informed learning, and predictive machine learning.",
   authors: [{ name: "Robert Hu", url: "https://mrhuff.github.io/" }],
   creator: "Robert Hu",
   keywords: [
@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     "low-precision training",
     "causal inference",
     "kernel methods",
-    "Graphcore",
+    "recommender systems",
+    "interpretable machine learning",
   ],
   alternates: {
     canonical: "/",
@@ -24,25 +25,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: "/",
-    title: "Robert Hu — Machine Learning Research Scientist",
+    title: "Robert Hu — Machine Learning Researcher",
     description:
-      "Research in low-precision training, efficient AI systems, and statistical machine learning.",
+      "Systems and numerics for efficient learning, with work in causal and predictive machine learning.",
     siteName: "Robert Hu",
     images: [
       {
-        url: "/og-v2.png",
-        width: 1732,
-        height: 908,
-        alt: "Robert Hu — Machine learning researcher",
+        url: "/og.png",
+        width: 1731,
+        height: 909,
+        alt: "Portrait of Robert Hu, machine learning researcher",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Robert Hu — Machine Learning Research Scientist",
+    title: "Robert Hu — Machine Learning Researcher",
     description:
-      "Research in low-precision training, efficient AI systems, and statistical machine learning.",
-    images: ["/og-v2.png"],
+      "Systems and numerics for efficient learning, with work in causal and predictive machine learning.",
+    images: ["/og.png"],
   },
   robots: {
     index: true,

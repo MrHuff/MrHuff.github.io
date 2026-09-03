@@ -33,13 +33,16 @@ test("server-renders Robert Hu's academic website", async () => {
   const html = await response.text();
   assert.match(
     html,
-    /<title>Robert Hu — Machine Learning Research Scientist<\/title>/i,
+    /<title>Robert Hu — Machine Learning Researcher<\/title>/i,
   );
-  assert.match(html, /from theorem to throughput/i);
-  assert.match(html, /Strawberry matcha helps/i);
+  assert.match(html, /Systems and numerics for efficient learning/i);
+  assert.match(html, /Primary direction/i);
+  assert.match(html, /Predictive ML and recommendation/i);
+  assert.match(html, /Strawberry matcha enthusiast/i);
+  assert.match(html, /Portrait of Robert Hu/i);
   assert.match(html, /UE5M3 FP4 Block Scaling/i);
   assert.match(html, /Google Scholar/i);
-  assert.match(html, /@MrHuff on GitHub/i);
+  assert.match(html, /github\.com\/MrHuff/i);
   assert.match(html, /application\/ld\+json/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });
