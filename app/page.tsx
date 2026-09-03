@@ -41,10 +41,6 @@ const institutionMarks = {
     label: "H&M",
     src: "/institutions/hm.png",
   },
-  izettle: {
-    label: "iZettle",
-    src: "/institutions/izettle.svg",
-  },
   kth: {
     label: "KTH Royal Institute of Technology",
     src: "/institutions/kth.svg",
@@ -267,10 +263,10 @@ const experience: ExperienceItem[] = [
   {
     period: "2016 — 2018",
     role: "Data Scientist and Data Analyst",
-    place: "H&M and iZettle, Stockholm",
+    place: "H&M, Stockholm",
     summary:
       "Built forecasting, experimentation, and decision-support systems.",
-    institutions: ["hm", "izettle"],
+    institutions: ["hm"],
   },
 ];
 

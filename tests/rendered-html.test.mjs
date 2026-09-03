@@ -52,7 +52,7 @@ test("server-renders Robert Hu's academic website", async () => {
   assert.match(html, /\/institutions\/amazon\.png/i);
   assert.match(html, /\/institutions\/oxford\.svg/i);
   assert.match(html, /\/institutions\/hm\.png/i);
-  assert.match(html, /\/institutions\/izettle\.svg/i);
+  assert.doesNotMatch(html, /iZettle/i);
   assert.match(html, /\/institutions\/kth\.svg/i);
   assert.match(html, /\/institutions\/sse\.svg/i);
   assert.match(
