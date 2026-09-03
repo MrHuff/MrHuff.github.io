@@ -134,7 +134,7 @@ const primaryWork: WorkGroup[] = [
 const predictiveWork: WorkGroup = {
   title: "Predictive ML and recommender systems",
   description:
-    "A second strand on preferences, uncertainty, survival modelling, and statistically principled prediction.",
+    "Preferences, uncertainty, survival modelling, and statistically principled prediction.",
   publications: [
     {
       year: "2023",
@@ -391,7 +391,11 @@ export default function Home() {
           >
             <section className="section research-overview" id="research">
               <div className="research-header">
-                <h2>Research</h2>
+                <h2>
+                  {researchMode === "main"
+                    ? "Research thesis"
+                    : "Other research"}
+                </h2>
                 <button
                   className="mode-toggle"
                   type="button"
@@ -417,7 +421,6 @@ export default function Home() {
                   className="research-summary"
                   hidden={researchMode !== "main"}
                 >
-                  <p className="section-label">Primary direction</p>
                   <h3>Efficient, grounded, interpretable learning.</h3>
                   <p>
                     Scaling is most useful when computation is efficient. I study
@@ -438,7 +441,6 @@ export default function Home() {
                   className="research-summary alternate-summary"
                   hidden={researchMode !== "predictive"}
                 >
-                  <p className="section-label">Second strand</p>
                   <h3>Predictive ML and recommender systems.</h3>
                   <p>
                     I also work on traditional predictive machine learning:
@@ -480,7 +482,6 @@ export default function Home() {
                   hidden={researchMode !== "predictive"}
                 >
                   <article className="work-group">
-                    <p className="section-label">Second strand</p>
                     <h3>{predictiveWork.title}</h3>
                     <p className="group-description">
                       {predictiveWork.description}
