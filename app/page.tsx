@@ -69,6 +69,7 @@ type EducationItem = {
   period: string;
   degree: string;
   school: string;
+  note?: string;
   institutions: InstitutionKey[];
 };
 
@@ -278,6 +279,7 @@ const education: EducationItem[] = [
     period: "2018 — 2022",
     degree: "DPhil in Machine Learning and Statistics",
     school: "University of Oxford",
+    note: "Supervised by Dino Sejdinovic, Robin Evans, and Geoff Nicholls.",
     institutions: ["oxford"],
   },
   {
@@ -604,6 +606,9 @@ export default function Home() {
                         <p className="item-date">{item.period}</p>
                         <h4>{item.degree}</h4>
                         <p>{item.school}</p>
+                        {item.note && (
+                          <p className="education-note">{item.note}</p>
+                        )}
                       </div>
                       <InstitutionMarks institutions={item.institutions} />
                     </article>

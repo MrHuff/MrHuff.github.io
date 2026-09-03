@@ -471,6 +471,11 @@ h2 {
   color: var(--muted);
 }
 
+.plain-list .education-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .contact p {
   margin: 14px 0 0;
 }
