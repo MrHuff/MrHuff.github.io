@@ -339,8 +339,12 @@ export default function Home() {
 
       <div className="page">
         <header className="site-header" id="top">
-          <a className="site-title" href="#top">
-            Robert Hu
+          <a
+            className="site-title"
+            href="#top"
+            aria-label="Robert Hu, back to top"
+          >
+            God dag
             <span className="header-treat" role="img" aria-label="strawberry matcha">
               🍓🍵
             </span>

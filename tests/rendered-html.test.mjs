@@ -42,6 +42,7 @@ test("server-renders Robert Hu's academic website", async () => {
   assert.match(html, /particularly FP4/i);
   assert.match(html, /aria-pressed="false"/i);
   assert.match(html, /🍓🍵/u);
+  assert.match(html, /God dag/i);
   assert.doesNotMatch(html, /Strawberry matcha enthusiast/i);
   assert.match(html, /Portrait of Robert Hu/i);
   assert.match(html, /UE5M3 FP4 Block Scaling/i);
