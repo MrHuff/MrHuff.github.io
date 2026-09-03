@@ -454,11 +454,9 @@ export default function Home() {
               <div className="section-heading split-heading">
                 <div>
                   <h2>Research, by theme</h2>
-                  <p>
-                    {researchMode === "predictive"
-                      ? "The other half of the research record."
-                      : "The main research programme."}
-                  </p>
+                  {researchMode === "predictive" && (
+                    <p>The other half of the research record.</p>
+                  )}
                 </div>
                 <ExternalLink href={links.scholar}>
                   Complete record on Scholar ↗
@@ -469,7 +467,6 @@ export default function Home() {
                 <div className="work-panel" hidden={researchMode !== "main"}>
                   {primaryWork.map((group) => (
                     <article className="work-group" key={group.title}>
-                      <p className="section-label">Primary research</p>
                       <h3>{group.title}</h3>
                       <p className="group-description">{group.description}</p>
                       <PublicationList publications={group.publications} />
