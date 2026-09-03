@@ -36,6 +36,7 @@ test("server-renders Robert Hu's academic website", async () => {
     /<title>Robert Hu — Machine Learning Research Scientist<\/title>/i,
   );
   assert.match(html, /from theorem to throughput/i);
+  assert.match(html, /Strawberry matcha helps/i);
   assert.match(html, /UE5M3 FP4 Block Scaling/i);
   assert.match(html, /Google Scholar/i);
   assert.match(html, /@MrHuff on GitHub/i);

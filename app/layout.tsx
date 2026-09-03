@@ -24,25 +24,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: "/",
-    title: "Robert Hu — From theorem to throughput",
+    title: "Robert Hu — Machine Learning Research Scientist",
     description:
       "Research in low-precision training, efficient AI systems, and statistical machine learning.",
     siteName: "Robert Hu",
     images: [
       {
-        url: "/og.png",
-        width: 1730,
-        height: 910,
-        alt: "Robert Hu — Machine learning, from theorem to throughput",
+        url: "/og-v2.png",
+        width: 1732,
+        height: 908,
+        alt: "Robert Hu — Machine learning researcher",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Robert Hu — From theorem to throughput",
+    title: "Robert Hu — Machine Learning Research Scientist",
     description:
       "Research in low-precision training, efficient AI systems, and statistical machine learning.",
-    images: ["/og.png"],
+    images: ["/og-v2.png"],
   },
   robots: {
     index: true,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f3f0e8",
+  themeColor: "#fbfaf7",
   colorScheme: "light",
 };
 

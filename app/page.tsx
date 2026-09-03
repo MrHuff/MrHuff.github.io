@@ -1,7 +1,6 @@
 const links = {
   email: "mailto:robert.stats.hu@gmail.com",
-  scholar:
-    "https://scholar.google.com/citations?user=SaxR4ugAAAAJ&hl=en",
+  scholar: "https://scholar.google.com/citations?user=SaxR4ugAAAAJ&hl=en",
   github: "https://github.com/MrHuff",
   linkedin: "https://www.linkedin.com/in/robert-hu-77680450/",
   graphcore: "https://graphcore-research.github.io/author/roberthu/",
@@ -11,81 +10,19 @@ const links = {
 
 const researchAreas = [
   {
-    number: "01",
     title: "Low-precision training",
     description:
-      "FP4 and microscaling recipes, numerical stability, and fused CUDA kernels that turn lower precision into real end-to-end throughput.",
-    tags: ["FP4 / MXFP4", "CUDA", "Distributed training"],
+      "FP4 and microscaling recipes, numerical stability, and fused CUDA kernels for efficient foundation-model training.",
   },
   {
-    number: "02",
     title: "Long-context systems",
     description:
-      "Hardware-aware attention algorithms for contexts that outgrow dense quadratic computation, including hierarchical and packed sparse topologies.",
-    tags: ["Attention", "Sequence packing", "Kernel design"],
+      "Hardware-aware attention algorithms for contexts that outgrow dense quadratic computation.",
   },
   {
-    number: "03",
     title: "Statistical machine learning",
     description:
       "Scalable kernel methods, causal testing, interpretable models, survival analysis, and uncertainty-aware learning.",
-    tags: ["Causal inference", "Kernels", "Uncertainty"],
-  },
-];
-
-const selectedWork = [
-  {
-    year: "2026",
-    venue: "arXiv",
-    title: "UE5M3 FP4 Block Scaling for Stable Language Model Pretraining",
-    authors: "Robert Hu, Carlo Luschi, Paul Balança",
-    description:
-      "A simpler FP4 recipe built around wide-range UE5M3 block scales, evaluated by pretraining an 8B model for nearly 190 billion tokens.",
-    href: "https://arxiv.org/abs/2609.02846",
-    accent: "Latest",
-  },
-  {
-    year: "2025",
-    venue: "arXiv",
-    title: "Elucidating the Design Space of FP4 Training",
-    authors: "Robert Hu, Carlo Luschi, Paul Balança",
-    description:
-      "A unified gradient-based framework and large empirical study of scaling, rounding, and stabilization choices for FP4 training.",
-    href: "https://arxiv.org/abs/2509.17791",
-    accent: "FP4",
-  },
-  {
-    year: "2024",
-    venue: "JMLR",
-    title:
-      "A Kernel Test for Causal Association via Noise Contrastive Backdoor Adjustment",
-    authors: "Robert Hu, Dino Sejdinovic, Robin J. Evans",
-    description:
-      "A non-parametric test for causal association that combines density-ratio estimation with kernel independence testing.",
-    href: "https://www.jmlr.org/papers/v25/21-1409.html",
-    accent: "Causality",
-  },
-  {
-    year: "2022",
-    venue: "NeurIPS",
-    title: "Giga-scale Kernel Matrix-Vector Multiplication on GPU",
-    authors: "Robert Hu, Siu Lun Chau, Dino Sejdinovic, Joan Glaunès",
-    description:
-      "An empirical linear-time, linear-memory GPU method that scales kernel matrix-vector products to a billion points.",
-    href:
-      "https://proceedings.neurips.cc/paper_files/paper/2022/hash/3b1f32693e9fe15c949a0742bf226803-Abstract-Conference.html",
-    accent: "Systems",
-  },
-  {
-    year: "2022",
-    venue: "AISTATS · Honourable Mention",
-    title:
-      "Survival Regression with Proper Scoring Rules and Monotonic Neural Networks",
-    authors: "David Rindt*, Robert Hu*, David Steinsaltz, Dino Sejdinovic",
-    description:
-      "A proper-scoring approach to neural survival regression with fast inference at million-observation scale.",
-    href: "https://proceedings.mlr.press/v151/rindt22a.html",
-    accent: "Award",
   },
 ];
 
@@ -106,7 +43,7 @@ const publications = [
   },
   {
     year: "2024",
-    venue: "JMLR 25(160)",
+    venue: "Journal of Machine Learning Research, 25(160)",
     title:
       "A Kernel Test for Causal Association via Noise Contrastive Backdoor Adjustment",
     authors: "Robert Hu, Dino Sejdinovic, Robin J. Evans",
@@ -114,7 +51,7 @@ const publications = [
   },
   {
     year: "2024",
-    venue: "TMLR",
+    venue: "Transactions on Machine Learning Research",
     title:
       "Doubly Robust Kernel Statistics for Testing Distributional Treatment Effects",
     authors: "Jake Fawkes, Robert Hu, Robin J. Evans, Dino Sejdinovic",
@@ -122,11 +59,10 @@ const publications = [
   },
   {
     year: "2023",
-    venue: "J. Computational Mathematics & Data Science",
+    venue: "Computational Mathematics and Data Science",
     title: "Towards Deep Interpretable Features",
     authors: "Robert Hu, Dino Sejdinovic",
-    href:
-      "https://www.sciencedirect.com/science/article/pii/S277241582200027X",
+    href: "https://www.sciencedirect.com/science/article/pii/S277241582200027X",
   },
   {
     year: "2023",
@@ -169,7 +105,7 @@ const publications = [
   },
   {
     year: "2022",
-    venue: "AISTATS · Honourable Mention",
+    venue: "AISTATS · Best Paper Honourable Mention",
     title:
       "Survival Regression with Proper Scoring Rules and Monotonic Neural Networks",
     authors: "David Rindt*, Robert Hu*, David Steinsaltz, Dino Sejdinovic",
@@ -177,7 +113,7 @@ const publications = [
   },
   {
     year: "2022",
-    venue: "Machine Learning 111",
+    venue: "Machine Learning, 111",
     title: "Large Scale Tensor Regression Using Kernels and Variational Inference",
     authors: "Robert Hu, Geoff K. Nicholls, Dino Sejdinovic",
     href: "https://link.springer.com/article/10.1007/s10994-021-06067-7",
@@ -196,6 +132,66 @@ const publications = [
     title: "Robust Deep Interpretable Features for Binary Image Classification",
     authors: "Robert Hu, Dino Sejdinovic",
     href: "https://septentrio.uit.no/index.php/nldl/article/view/5708",
+  },
+];
+
+const experience = [
+  {
+    period: "2025 — present",
+    role: "Research Scientist",
+    place: "Graphcore, London",
+    summary:
+      "Working on FP4 pretraining, CUDA kernels, and long-context attention systems.",
+  },
+  {
+    period: "2022 — 2025",
+    role: "Applied Scientist",
+    place: "Amazon, London",
+    summary:
+      "Developed and deployed language-model and auction-learning systems.",
+  },
+  {
+    period: "2022",
+    role: "Postdoctoral Research Assistant",
+    place: "University of Oxford",
+    summary: "Worked on survival analysis for genomic data.",
+  },
+  {
+    period: "2018 — 2022",
+    role: "Industrial PhD",
+    place: "H&M and University of Oxford",
+    summary:
+      "Combined academic research with large-scale forecasting and churn modelling.",
+  },
+  {
+    period: "2016 — 2018",
+    role: "Data Scientist and Data Analyst",
+    place: "H&M and iZettle, Stockholm",
+    summary:
+      "Built forecasting, experimentation, and decision-support systems.",
+  },
+];
+
+const education = [
+  {
+    period: "2018 — 2022",
+    degree: "DPhil in Machine Learning and Statistics",
+    school: "University of Oxford",
+  },
+  {
+    period: "2014 — 2016",
+    degree: "MSc in Mathematical Statistics",
+    school: "KTH Royal Institute of Technology",
+  },
+  {
+    period: "2014 — 2017",
+    degree: "BSc in Business and Economics",
+    school: "Stockholm School of Economics",
+  },
+  {
+    period: "2011 — 2014",
+    degree: "BSc in Engineering Physics",
+    school: "KTH Royal Institute of Technology",
   },
 ];
 
@@ -224,77 +220,6 @@ const codeProjects = [
     name: "KernelFriedTensor",
     description: "Scalable tensor regression with kernels and variational inference.",
     href: "https://github.com/MrHuff/KernelFriedTensor",
-  },
-];
-
-const experience = [
-  {
-    period: "2025 — Now",
-    role: "Research Scientist",
-    place: "Graphcore · London",
-    summary:
-      "Building next-generation pretraining infrastructure: stable FP4/MXFP4 recipes, high-throughput CUDA kernels, and long-context attention systems.",
-    highlights: ["FP4 pretraining", "CUDA kernels", "Hierarchical attention"],
-  },
-  {
-    period: "2022 — 2025",
-    role: "Applied Scientist",
-    place: "Amazon · London",
-    summary:
-      "Developed and deployed LLM and auction-learning systems, spanning model fine-tuning, uncertainty quantification, exploration, and reserve-price mechanisms.",
-    highlights: ["Production LLMs", "Ad auctions", "Causal experiments"],
-  },
-  {
-    period: "2022",
-    role: "Postdoctoral Research Assistant",
-    place: "University of Oxford",
-    summary:
-      "Worked with Prof. David Steinsaltz on survival analysis for genomic data.",
-    highlights: ["Survival analysis", "Genomics"],
-  },
-  {
-    period: "2018 — 2022",
-    role: "Industrial PhD",
-    place: "H&M · Oxford / Stockholm",
-    summary:
-      "Combined academic research with deployed forecasting and churn models at tens-of-millions-of-observations scale.",
-    highlights: ["Large-scale forecasting", "Churn modelling", "Deployment"],
-  },
-  {
-    period: "2016 — 2018",
-    role: "Data Scientist & Data Analyst",
-    place: "H&M · iZettle · Stockholm",
-    summary:
-      "Built forecasting, experimentation, data, and decision-support systems for commerce and acquisition teams.",
-    highlights: ["Gaussian processes", "A/B testing", "Data systems"],
-  },
-];
-
-const education = [
-  {
-    period: "2018 — 2022",
-    degree: "PhD · Machine Learning & Statistics",
-    school: "University of Oxford",
-    detail:
-      "Scalable kernel methods, causal inference, and interpretable deep learning.",
-  },
-  {
-    period: "2014 — 2016",
-    degree: "MSc · Mathematical Statistics",
-    school: "KTH Royal Institute of Technology",
-    detail: "Including a semester in Mathematics at ETH Zürich.",
-  },
-  {
-    period: "2014 — 2017",
-    degree: "BSc · Business & Economics",
-    school: "Stockholm School of Economics",
-    detail: "Completed in parallel with studies at KTH.",
-  },
-  {
-    period: "2011 — 2014",
-    degree: "BSc · Engineering Physics",
-    school: "KTH Royal Institute of Technology",
-    detail: "Foundations in mathematics, physics, and computation.",
   },
 ];
 
@@ -334,14 +259,8 @@ export default function Home() {
     },
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "University of Oxford" },
-      {
-        "@type": "CollegeOrUniversity",
-        name: "KTH Royal Institute of Technology",
-      },
-      {
-        "@type": "CollegeOrUniversity",
-        name: "Stockholm School of Economics",
-      },
+      { "@type": "CollegeOrUniversity", name: "KTH Royal Institute of Technology" },
+      { "@type": "CollegeOrUniversity", name: "Stockholm School of Economics" },
     ],
     sameAs: [
       links.scholar,
@@ -366,393 +285,172 @@ export default function Home() {
         Skip to content
       </a>
 
-      <div className="page-noise" aria-hidden="true" />
-
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Robert Hu, home">
-          <span className="brand-mark">RH</span>
-          <span className="brand-copy">
-            <strong>Robert Hu</strong>
-            <span>Research Scientist</span>
-          </span>
-        </a>
-
-        <nav aria-label="Primary navigation">
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
-          <a href="#code">Code</a>
-          <a className="nav-cta" href="#contact">
-            Contact <span aria-hidden="true">↓</span>
+      <div className="page">
+        <header className="site-header" id="top">
+          <a className="site-title" href="#top">
+            Robert Hu
           </a>
-        </nav>
-      </header>
+          <nav aria-label="Primary navigation">
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#experience">Experience</a>
+            <a href="#code">Code</a>
+          </nav>
+        </header>
 
-      <main id="main">
-        <section className="hero site-shell" id="top">
-          <div className="hero-copy">
-            <p className="eyebrow">
-              <span className="status-dot" aria-hidden="true" />
-              Research Scientist · Graphcore · London
-            </p>
-
-            <h1>
-              Machine learning,
-              <span>from theorem to throughput.</span>
-            </h1>
-
-            <p className="hero-intro">
-              I build learning systems that remain principled at scale — from
-              causal inference and kernel methods to FP4 pretraining, CUDA
-              kernels, and long-context attention.
-            </p>
-
-            <div className="hero-actions">
-              <ExternalLink className="button button-primary" href={links.scholar}>
-                Google Scholar <span aria-hidden="true">↗</span>
-              </ExternalLink>
-              <ExternalLink
-                className="button button-secondary"
-                href="https://arxiv.org/abs/2609.02846"
-              >
-                Latest paper <span aria-hidden="true">↗</span>
-              </ExternalLink>
-            </div>
-
-            <div className="hero-links" aria-label="Profile links">
-              <ExternalLink href={links.github}>GitHub</ExternalLink>
-              <ExternalLink href={links.linkedin}>LinkedIn</ExternalLink>
-              <ExternalLink href={links.orcid}>ORCID</ExternalLink>
-              <ExternalLink href={links.email}>Email</ExternalLink>
-            </div>
-          </div>
-
-          <aside className="portrait-card" aria-label="About Robert Hu">
-            <div className="portrait-grid" aria-hidden="true">
-              {Array.from({ length: 20 }).map((_, index) => (
-                <span key={index} />
-              ))}
-            </div>
-            <div className="portrait-frame" aria-hidden="true">
-              <span className="portrait-initials">R·H</span>
-            </div>
-            <div className="portrait-meta">
-              <span>Current focus</span>
-              <strong>Efficient foundation-model training</strong>
-              <ExternalLink href={links.graphcore}>
-                Graphcore Research <span aria-hidden="true">↗</span>
-              </ExternalLink>
-            </div>
-          </aside>
-        </section>
-
-        <section className="signal-strip" aria-label="Selected research signals">
-          <div className="site-shell signal-grid">
-            <div className="signal-item">
-              <strong>190B</strong>
-              <span>pretraining tokens in latest FP4 study</span>
-            </div>
-            <div className="signal-item">
-              <strong>21.2%</strong>
-              <span>model-body throughput uplift in native ablation</span>
-            </div>
-            <div className="signal-item">
-              <strong>1B</strong>
-              <span>point kernel product in under one minute</span>
-            </div>
-            <div className="signal-item">
-              <strong>AISTATS ’22</strong>
-              <span>Best Paper Honourable Mention</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="section site-shell" id="research">
-          <div className="section-heading">
-            <p className="section-kicker">Research</p>
-            <h2>Where algorithms meet the machine.</h2>
-            <p>
-              My work crosses statistical foundations, numerical formats, and
-              hardware-aware implementation.
-            </p>
-          </div>
-
-          <div className="research-grid">
-            {researchAreas.map((area) => (
-              <article className="research-card" key={area.number}>
-                <span className="card-number">{area.number}</span>
-                <h3>{area.title}</h3>
-                <p>{area.description}</p>
-                <ul
-                  className="tag-list"
-                  aria-label={area.title + " topics"}
-                >
-                  {area.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="latest-section">
-          <div className="site-shell latest-grid">
+        <main id="main">
+          <section className="intro" aria-labelledby="intro-title">
             <div>
-              <p className="section-kicker section-kicker-light">Latest work</p>
-              <p className="latest-date">02 · 09 · 2026</p>
-            </div>
-            <div className="latest-copy">
-              <span className="paper-label">FP4 pretraining · arXiv</span>
-              <h2>UE5M3 FP4 Block Scaling for Stable Language Model Pretraining</h2>
-              <p>
-                We pair E2M1 payloads with wider-range UE5M3 block scales,
-                enabling a simpler recipe with periodic tensor scaling,
-                selective stochastic rounding, and FP4 across eligible internal
-                linear layers.
+              <p className="position">Research Scientist · Graphcore · London</p>
+              <h1 id="intro-title">Robert Hu</h1>
+              <p className="intro-copy">
+                I work on efficient machine learning systems and statistical
+                machine learning—from theorem to throughput. My current work
+                focuses on low-precision training, CUDA kernels, and long-context
+                attention.
               </p>
-              <div className="latest-facts">
-                <span>Nemotron-H 8B</span>
-                <span>Nearly 190B tokens</span>
-                <span>21.2% throughput ablation uplift</span>
-              </div>
-              <ExternalLink
-                className="text-link text-link-light"
-                href="https://arxiv.org/abs/2609.02846"
-              >
-                Read the paper <span aria-hidden="true">↗</span>
-              </ExternalLink>
+              <p className="link-line" aria-label="Profile links">
+                <ExternalLink href={links.scholar}>Google Scholar</ExternalLink>
+                <ExternalLink href={links.github}>GitHub</ExternalLink>
+                <ExternalLink href={links.linkedin}>LinkedIn</ExternalLink>
+                <ExternalLink href={links.orcid}>ORCID</ExternalLink>
+                <ExternalLink href={links.email}>Email</ExternalLink>
+              </p>
             </div>
-          </div>
-        </section>
 
-        <section className="section site-shell" id="publications">
-          <div className="section-heading split-heading">
-            <div>
-              <p className="section-kicker">Selected work</p>
-              <h2>Research, with the implementation close at hand.</h2>
+            <figure className="matcha-figure">
+              <div
+                className="matcha-image"
+                role="img"
+                aria-label="A glass of strawberry matcha"
+              />
+              <figcaption>Strawberry matcha helps.</figcaption>
+            </figure>
+          </section>
+
+          <section className="section" id="research">
+            <h2>Research</h2>
+            <p className="section-intro">
+              My research sits between statistical foundations and efficient
+              implementation.
+            </p>
+            <ul className="research-list">
+              {researchAreas.map((area) => (
+                <li key={area.title}>
+                  <strong>{area.title}.</strong> {area.description}
+                </li>
+              ))}
+            </ul>
+
+            <article className="latest-paper">
+              <p className="latest-label">
+                <span aria-hidden="true" /> Latest paper · 2026
+              </p>
+              <h3>
+                <ExternalLink href="https://arxiv.org/abs/2609.02846">
+                  UE5M3 FP4 Block Scaling for Stable Language Model Pretraining
+                </ExternalLink>
+              </h3>
+              <p className="paper-authors">Robert Hu, Carlo Luschi, Paul Balança</p>
+              <p>
+                A simpler FP4 recipe built around wide-range UE5M3 block scales,
+                evaluated by pretraining an 8B model for nearly 190 billion
+                tokens.
+              </p>
+            </article>
+          </section>
+
+          <section className="section" id="publications">
+            <div className="section-heading">
+              <h2>Publications</h2>
+              <ExternalLink href={links.scholar}>Complete list on Google Scholar ↗</ExternalLink>
             </div>
-            <ExternalLink className="text-link" href={links.scholar}>
-              Complete record on Scholar <span aria-hidden="true">↗</span>
-            </ExternalLink>
-          </div>
-
-          <div className="work-list">
-            {selectedWork.map((work, index) => (
-              <ExternalLink
-                className="work-row"
-                href={work.href}
-                key={work.title}
-              >
-                <span className="work-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="work-main">
-                  <span className="work-meta">
-                    {work.year} · {work.venue}
-                  </span>
-                  <strong>{work.title}</strong>
-                  <span className="work-authors">{work.authors}</span>
-                  <span className="work-description">{work.description}</span>
-                </span>
-                <span className="work-accent">{work.accent}</span>
-                <span className="work-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </ExternalLink>
-            ))}
-          </div>
-
-          <details className="publication-drawer">
-            <summary>
-              <span>View full publication list</span>
-              <span className="summary-count">{publications.length} entries</span>
-            </summary>
-            <div className="publication-list">
-              {publications.map((publication) => {
-                const content = (
-                  <>
-                    <span className="publication-year">{publication.year}</span>
-                    <span className="publication-copy">
-                      <strong>{publication.title}</strong>
-                      <span>{publication.authors}</span>
-                      <em>{publication.venue}</em>
-                    </span>
-                    {publication.href ? (
-                      <span className="publication-arrow" aria-hidden="true">
-                        ↗
-                      </span>
-                    ) : null}
-                  </>
-                );
-
-                return publication.href ? (
-                  <ExternalLink
-                    className="publication-row"
-                    href={publication.href}
-                    key={publication.year + "-" + publication.title}
-                  >
-                    {content}
-                  </ExternalLink>
-                ) : (
-                  <div
-                    className="publication-row"
-                    key={publication.year + "-" + publication.title}
-                  >
-                    {content}
+            <ol className="publication-list">
+              {publications.map((publication) => (
+                <li key={`${publication.year}-${publication.title}`}>
+                  <span className="publication-year">{publication.year}</span>
+                  <div>
+                    <h3>
+                      {publication.href ? (
+                        <ExternalLink href={publication.href}>
+                          {publication.title}
+                        </ExternalLink>
+                      ) : (
+                        publication.title
+                      )}
+                    </h3>
+                    <p>{publication.authors}</p>
+                    <p className="venue">{publication.venue}</p>
                   </div>
-                );
-              })}
-            </div>
-            <p className="equal-note">* Equal contribution.</p>
-          </details>
-        </section>
+                </li>
+              ))}
+            </ol>
+            <p className="footnote">* Equal contribution.</p>
+          </section>
 
-        <section className="section section-tint" id="experience">
-          <div className="site-shell">
-            <div className="section-heading split-heading">
-              <div>
-                <p className="section-kicker">Experience</p>
-                <h2>Research that survives contact with production.</h2>
-              </div>
-              <ExternalLink className="text-link" href={links.oxford}>
-                Oxford profile <span aria-hidden="true">↗</span>
-              </ExternalLink>
+          <section className="section" id="experience">
+            <div className="section-heading">
+              <h2>Experience</h2>
+              <ExternalLink href={links.oxford}>Oxford profile ↗</ExternalLink>
             </div>
-
-            <div className="timeline">
+            <div className="plain-list">
               {experience.map((item) => (
-                <article
-                  className="timeline-row"
-                  key={item.period + "-" + item.role}
-                >
-                  <div className="timeline-period">{item.period}</div>
-                  <div className="timeline-title">
+                <article key={`${item.period}-${item.role}`}>
+                  <p className="item-date">{item.period}</p>
+                  <div>
                     <h3>{item.role}</h3>
-                    <p>{item.place}</p>
-                  </div>
-                  <div className="timeline-body">
+                    <p className="item-place">{item.place}</p>
                     <p>{item.summary}</p>
-                    <ul className="tag-list">
-                      {item.highlights.map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
-                      ))}
-                    </ul>
                   </div>
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="section site-shell" id="code">
-          <div className="section-heading split-heading">
-            <div>
-              <p className="section-kicker">Open source</p>
-              <h2>Methods you can run.</h2>
-            </div>
-            <ExternalLink className="text-link" href={links.github}>
-              @MrHuff on GitHub <span aria-hidden="true">↗</span>
-            </ExternalLink>
-          </div>
-
-          <div className="code-grid">
-            {codeProjects.map((project) => (
-              <ExternalLink
-                className="code-card"
-                href={project.href}
-                key={project.name}
-              >
-                <span className="code-prompt" aria-hidden="true">
-                  $
-                </span>
-                <strong>{project.name}</strong>
-                <p>{project.description}</p>
-                <span className="code-link">
-                  View repository <span aria-hidden="true">↗</span>
-                </span>
-              </ExternalLink>
-            ))}
-          </div>
-        </section>
-
-        <section className="section education-section">
-          <div className="site-shell education-layout">
-            <div className="section-heading">
-              <p className="section-kicker">Education</p>
-              <h2>A statistical foundation, built across disciplines.</h2>
-              <ExternalLink className="text-link" href={links.oxford}>
-                Oxford profile <span aria-hidden="true">↗</span>
-              </ExternalLink>
-            </div>
-
-            <div className="education-list">
+          <section className="section" aria-labelledby="education-title">
+            <h2 id="education-title">Education</h2>
+            <div className="plain-list compact-list">
               {education.map((item) => (
-                <article className="education-row" key={item.degree}>
-                  <span>{item.period}</span>
+                <article key={item.degree}>
+                  <p className="item-date">{item.period}</p>
                   <div>
                     <h3>{item.degree}</h3>
-                    <strong>{item.school}</strong>
-                    <p>{item.detail}</p>
+                    <p>{item.school}</p>
                   </div>
                 </article>
               ))}
             </div>
+          </section>
 
-            <aside className="recognition-card">
-              <p className="section-kicker section-kicker-light">Recognition</p>
-              <strong>AISTATS 2022</strong>
-              <h3>Best Paper Honourable Mention</h3>
-              <p>
-                For work on proper scoring rules and monotonic neural networks
-                for survival regression.
-              </p>
-              <div className="recognition-divider" />
-              <p className="service-copy">
-                Reviewer for NeurIPS, AISTATS, and ICML.
-              </p>
-            </aside>
-          </div>
-        </section>
-
-        <section className="contact-section" id="contact">
-          <div className="site-shell contact-grid">
-            <div>
-              <p className="section-kicker">Contact</p>
-              <h2>
-                Interested in efficient training, long contexts, or statistical
-                ML?
-              </h2>
+          <section className="section" id="code">
+            <div className="section-heading">
+              <h2>Code</h2>
+              <ExternalLink href={links.github}>@MrHuff on GitHub ↗</ExternalLink>
             </div>
-            <div className="contact-action">
-              <p>
-                The best way to reach me is by email. I am based in London and
-                always happy to compare notes on research.
-              </p>
-              <ExternalLink className="email-link" href={links.email}>
-                robert.stats.hu@gmail.com
-                <span aria-hidden="true">↗</span>
-              </ExternalLink>
-            </div>
-          </div>
-        </section>
-      </main>
+            <ul className="code-list">
+              {codeProjects.map((project) => (
+                <li key={project.name}>
+                  <ExternalLink href={project.href}>{project.name}</ExternalLink>
+                  <span> — {project.description}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-      <footer>
-        <div className="site-shell footer-grid">
-          <div>
-            <strong>Robert Hu</strong>
-            <span>Machine learning · from theorem to throughput.</span>
-          </div>
-          <div className="footer-links">
-            <ExternalLink href={links.scholar}>Scholar</ExternalLink>
-            <ExternalLink href={links.github}>GitHub</ExternalLink>
-            <ExternalLink href={links.linkedin}>LinkedIn</ExternalLink>
-            <a href="#top">Back to top ↑</a>
-          </div>
-          <p>London · 2026</p>
-        </div>
-      </footer>
+          <section className="section contact" id="contact">
+            <h2>Contact</h2>
+            <p>
+              The best way to reach me is at{" "}
+              <ExternalLink href={links.email}>robert.stats.hu@gmail.com</ExternalLink>.
+            </p>
+          </section>
+        </main>
+
+        <footer>
+          <p>Robert Hu · London</p>
+          <a href="#top">Back to top ↑</a>
+        </footer>
+      </div>
 
       <script
         type="application/ld+json"
