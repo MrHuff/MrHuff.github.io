@@ -38,11 +38,18 @@ test("server-renders Robert Hu's academic website", async () => {
   assert.match(html, /Systems and numerics for efficient learning/i);
   assert.match(html, /Primary direction/i);
   assert.match(html, /Predictive ML and recommendation/i);
+  assert.match(html, /ground models by teaching them how to infer causal relationships/i);
+  assert.match(html, /aria-pressed="false"/i);
+  assert.match(html, /🍓🍵/u);
   assert.match(html, /Strawberry matcha enthusiast/i);
   assert.match(html, /Portrait of Robert Hu/i);
   assert.match(html, /UE5M3 FP4 Block Scaling/i);
   assert.match(html, /Google Scholar/i);
   assert.match(html, /github\.com\/MrHuff/i);
+  assert.match(html, /robert\.stats\.hu/i);
+  assert.match(html, /\[at\]/i);
+  assert.doesNotMatch(html, /mailto:/i);
+  assert.doesNotMatch(html, /robert\.stats\.hu@gmail\.com/i);
   assert.match(html, /application\/ld\+json/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });

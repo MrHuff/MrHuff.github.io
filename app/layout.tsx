@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mrhuff.github.io"),
   title: "Robert Hu — Machine Learning Researcher",
   description:
-    "Robert Hu works on systems and numerical methods for efficient pre-training and inference, causally informed learning, and predictive machine learning.",
+    "Robert Hu works on systems and numerics for efficient learning, and on methods for grounding and interpreting what models learn.",
   authors: [{ name: "Robert Hu", url: "https://mrhuff.github.io/" }],
   creator: "Robert Hu",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "/",
     title: "Robert Hu — Machine Learning Researcher",
     description:
-      "Systems and numerics for efficient learning, with work in causal and predictive machine learning.",
+      "Systems and numerics for efficient learning, grounded models, and interpretability.",
     siteName: "Robert Hu",
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Robert Hu — Machine Learning Researcher",
     description:
-      "Systems and numerics for efficient learning, with work in causal and predictive machine learning.",
+      "Systems and numerics for efficient learning, grounded models, and interpretability.",
     images: ["/og.png"],
   },
   robots: {

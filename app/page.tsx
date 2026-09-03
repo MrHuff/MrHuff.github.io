@@ -1,4 +1,8 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
+
+import { useState } from "react";
 
 type Publication = {
   year: string;
@@ -21,7 +25,6 @@ type WorkGroup = {
 };
 
 const links = {
-  email: "mailto:robert.stats.hu@gmail.com",
   scholar: "https://scholar.google.com/citations?user=SaxR4ugAAAAJ&hl=en",
   github: "https://github.com/MrHuff",
   linkedin: "https://www.linkedin.com/in/robert-hu-77680450/",
@@ -73,9 +76,9 @@ const primaryWork: WorkGroup[] = [
     ],
   },
   {
-    title: "Grounded statistical learning",
+    title: "Grounding and interpretation",
     description:
-      "Methods for distinguishing association from effect and for learning how interventions change distributions—one foundation for models that learn more than correlation.",
+      "Causal methods and interpretable representations for models that learn more than correlation and are easier to inspect.",
     publications: [
       {
         year: "2024",
@@ -94,6 +97,14 @@ const primaryWork: WorkGroup[] = [
         href: "https://openreview.net/forum?id=5g5zFVj33K",
       },
       {
+        year: "2023",
+        venue: "Computational Mathematics and Data Science",
+        title: "Towards Deep Interpretable Features",
+        authors: "Robert Hu, Dino Sejdinovic",
+        href:
+          "https://www.sciencedirect.com/science/article/pii/S277241582200027X",
+      },
+      {
         year: "2022",
         venue: "University of Oxford · DPhil thesis",
         title:
@@ -101,6 +112,14 @@ const primaryWork: WorkGroup[] = [
         authors: "Robert Hu",
         href:
           "https://ora.ox.ac.uk/objects/uuid%3A6a5773e7-2fea-4914-a693-05a55c8b3f5d",
+      },
+      {
+        year: "2021",
+        venue: "Northern Lights Deep Learning Workshop",
+        title:
+          "Robust Deep Interpretable Features for Binary Image Classification",
+        authors: "Robert Hu, Dino Sejdinovic",
+        href: "https://septentrio.uit.no/index.php/nldl/article/view/5708",
       },
     ],
     code: [
@@ -113,17 +132,10 @@ const primaryWork: WorkGroup[] = [
 ];
 
 const predictiveWork: WorkGroup = {
-  title: "Predictive ML and recommendation",
+  title: "Predictive ML, recommendation, and decisions",
   description:
-    "A second strand of work on preferences, explanations, uncertainty, survival modelling, and statistically principled prediction.",
+    "A second strand on preferences, uncertainty, survival modelling, and statistically principled prediction.",
   publications: [
-    {
-      year: "2023",
-      venue: "Computational Mathematics and Data Science",
-      title: "Towards Deep Interpretable Features",
-      authors: "Robert Hu, Dino Sejdinovic",
-      href: "https://www.sciencedirect.com/science/article/pii/S277241582200027X",
-    },
     {
       year: "2023",
       venue: "Amazon Machine Learning Conference",
@@ -162,13 +174,6 @@ const predictiveWork: WorkGroup = {
         "Survival Regression with Proper Scoring Rules and Monotonic Neural Networks",
       authors: "David Rindt*, Robert Hu*, David Steinsaltz, Dino Sejdinovic",
       href: "https://proceedings.mlr.press/v151/rindt22a.html",
-    },
-    {
-      year: "2021",
-      venue: "Northern Lights Deep Learning Workshop",
-      title: "Robust Deep Interpretable Features for Binary Image Classification",
-      authors: "Robert Hu, Dino Sejdinovic",
-      href: "https://septentrio.uit.no/index.php/nldl/article/view/5708",
     },
   ],
   code: [
@@ -298,6 +303,10 @@ function RelatedCode({ projects }: { projects: CodeProject[] }) {
 }
 
 export default function Home() {
+  const [researchMode, setResearchMode] = useState<"main" | "predictive">(
+    "main",
+  );
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -305,7 +314,6 @@ export default function Home() {
     jobTitle: "Machine Learning Researcher",
     url: "https://mrhuff.github.io/",
     image: "https://mrhuff.github.io/robert-hu.jpeg",
-    email: "mailto:robert.stats.hu@gmail.com",
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "University of Oxford" },
       { "@type": "CollegeOrUniversity", name: "KTH Royal Institute of Technology" },
@@ -333,6 +341,9 @@ export default function Home() {
         <header className="site-header" id="top">
           <a className="site-title" href="#top">
             Robert Hu
+            <span className="header-treat" role="img" aria-label="strawberry matcha">
+              🍓🍵
+            </span>
           </a>
           <nav aria-label="Primary navigation">
             <a href="#research">Research</a>
@@ -351,22 +362,16 @@ export default function Home() {
                 Systems and numerics for efficient learning.
               </p>
               <p className="intro-copy">
-                My main research direction is the systems and numerical
-                foundations of large-scale learning: making pre-training and
-                inference use modern hardware well, from low-precision arithmetic
-                to GPU kernels and long-context methods.
-              </p>
-              <p className="intro-copy">
-                I am interested in what comes next—using that capacity to give
-                generative models more context and stronger grounding. Causal
-                information is one promising part of that.
+                I work on the systems and numerical foundations of large-scale
+                learning, and on methods for grounding and interpreting what
+                models learn.
               </p>
               <p className="link-line" aria-label="Profile links">
                 <ExternalLink href={links.scholar}>Google Scholar</ExternalLink>
                 <ExternalLink href={links.github}>GitHub</ExternalLink>
                 <ExternalLink href={links.linkedin}>LinkedIn</ExternalLink>
                 <ExternalLink href={links.orcid}>ORCID</ExternalLink>
-                <ExternalLink href={links.email}>Email</ExternalLink>
+                <a href="#contact">Contact</a>
               </p>
             </div>
 
@@ -384,86 +389,112 @@ export default function Home() {
             </figure>
           </section>
 
-          <section className="section" id="research">
-            <div className="section-heading">
-              <h2>Research programme</h2>
-            </div>
-
-            <div className="direction-layout">
-              <article className="primary-direction">
-                <p className="section-label">Primary direction</p>
-                <h3>From efficient scale to stronger grounding.</h3>
-                <p>
-                  Scaling is most useful when the underlying computation is
-                  efficient. I work on stable numerics and hardware-aware
-                  algorithms that turn lower precision and structured computation
-                  into real throughput.
-                </p>
-                <p>
-                  The longer-term aim is to connect efficient scale with models
-                  that learn from richer context, evidence, and causal
-                  structure—not correlation alone.
-                </p>
-                <ul className="focus-list">
-                  <li>Low-precision pre-training and inference</li>
-                  <li>GPU kernels and hardware-aware algorithms</li>
-                  <li>Long context and causally informed grounding</li>
-                </ul>
-              </article>
-
-              <aside className="secondary-direction">
-                <p className="section-label">A second strand</p>
-                <h3>Predictive ML and recommendation</h3>
-                <p>
-                  Alongside the main programme, I work on more traditional
-                  predictive machine learning: preferences and recommendation,
-                  uncertainty, interpretability, survival modelling, and decision
-                  systems.
-                </p>
-                <p>
-                  This strand draws on both statistical research and production
-                  work in forecasting, advertising, and deployed ML.
-                </p>
-              </aside>
-            </div>
-          </section>
-
-          <section className="section" id="work">
-            <div className="section-heading split-heading">
-              <div>
-                <h2>Research, by theme</h2>
-                <p>
-                  Grouped by question, with recent work first within each theme.
-                </p>
+          <div
+            className={`research-mode${
+              researchMode === "predictive" ? " is-predictive" : ""
+            }`}
+          >
+            <section className="section research-overview" id="research">
+              <div className="research-header">
+                <h2>Research</h2>
+                <button
+                  className="mode-toggle"
+                  type="button"
+                  aria-pressed={researchMode === "predictive"}
+                  aria-controls="research-content work-content"
+                  onClick={() =>
+                    setResearchMode((current) =>
+                      current === "main" ? "predictive" : "main",
+                    )
+                  }
+                >
+                  <span aria-hidden="true">
+                    {researchMode === "predictive" ? "☀" : "◐"}
+                  </span>
+                  {researchMode === "predictive"
+                    ? "Main research"
+                    : "Other research"}
+                </button>
               </div>
-              <ExternalLink href={links.scholar}>
-                Complete record on Scholar ↗
-              </ExternalLink>
-            </div>
 
-            <div className="work-layout">
-              <div className="primary-work">
-                {primaryWork.map((group) => (
-                  <article className="work-group" key={group.title}>
-                    <p className="section-label">Primary research</p>
-                    <h3>{group.title}</h3>
-                    <p className="group-description">{group.description}</p>
-                    <PublicationList publications={group.publications} />
-                    <RelatedCode projects={group.code} />
+              <div id="research-content" aria-live="polite">
+                <article
+                  className="research-summary"
+                  hidden={researchMode !== "main"}
+                >
+                  <p className="section-label">Primary direction</p>
+                  <h3>Efficient, grounded, interpretable learning.</h3>
+                  <p>
+                    Scaling is most useful when computation is efficient. I study
+                    stable numerics and hardware-aware algorithms for pre-training
+                    and inference. The longer-term aim is to connect efficient
+                    scale with interpretability, and ground models by teaching
+                    them how to infer causal relationships.
+                  </p>
+                </article>
+
+                <article
+                  className="research-summary alternate-summary"
+                  hidden={researchMode !== "predictive"}
+                >
+                  <p className="section-label">Second strand</p>
+                  <h3>Predictive ML and recommendation.</h3>
+                  <p>
+                    I also work on traditional predictive machine learning:
+                    preferences and recommendation, uncertainty, survival
+                    modelling, forecasting, advertising, and deployed decision
+                    systems.
+                  </p>
+                </article>
+              </div>
+            </section>
+
+            <section className="section" id="work">
+              <div className="section-heading split-heading">
+                <div>
+                  <h2>Research, by theme</h2>
+                  <p>
+                    {researchMode === "predictive"
+                      ? "The other half of the research record."
+                      : "The main research programme."}
+                  </p>
+                </div>
+                <ExternalLink href={links.scholar}>
+                  Complete record on Scholar ↗
+                </ExternalLink>
+              </div>
+
+              <div id="work-content">
+                <div className="work-panel" hidden={researchMode !== "main"}>
+                  {primaryWork.map((group) => (
+                    <article className="work-group" key={group.title}>
+                      <p className="section-label">Primary research</p>
+                      <h3>{group.title}</h3>
+                      <p className="group-description">{group.description}</p>
+                      <PublicationList publications={group.publications} />
+                      <RelatedCode projects={group.code} />
+                    </article>
+                  ))}
+                </div>
+
+                <div
+                  className="work-panel alternate-work"
+                  hidden={researchMode !== "predictive"}
+                >
+                  <article className="work-group">
+                    <p className="section-label">Second strand</p>
+                    <h3>{predictiveWork.title}</h3>
+                    <p className="group-description">
+                      {predictiveWork.description}
+                    </p>
+                    <PublicationList publications={predictiveWork.publications} />
+                    <RelatedCode projects={predictiveWork.code} />
                   </article>
-                ))}
+                </div>
               </div>
-
-              <aside className="secondary-work">
-                <p className="section-label">Second strand</p>
-                <h3>{predictiveWork.title}</h3>
-                <p className="group-description">{predictiveWork.description}</p>
-                <PublicationList publications={predictiveWork.publications} />
-                <RelatedCode projects={predictiveWork.code} />
-              </aside>
-            </div>
-            <p className="footnote">* Equal contribution.</p>
-          </section>
+              <p className="footnote">* Equal contribution.</p>
+            </section>
+          </div>
 
           <section className="section" id="background">
             <h2>Background</h2>
@@ -502,12 +533,9 @@ export default function Home() {
 
           <section className="section contact" id="contact">
             <h2>Contact</h2>
-            <p>
-              The best way to reach me is at{" "}
-              <ExternalLink href={links.email}>
-                robert.stats.hu@gmail.com
-              </ExternalLink>
-              .
+            <p>The best way to reach me is by email.</p>
+            <p className="email-address">
+              robert.stats.hu <span>[at]</span> gmail <span>[dot]</span> com
             </p>
           </section>
         </main>
