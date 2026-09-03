@@ -37,6 +37,7 @@ test("server-renders Robert Hu's academic website", async () => {
   );
   assert.match(html, /Systems and numerics for efficient learning/i);
   assert.match(html, /Research thesis/i);
+  assert.match(html, /Papers, by theme/i);
   assert.doesNotMatch(html, /Primary direction/i);
   assert.match(html, /Predictive ML and recommender systems/i);
   assert.match(html, /infer cause and effect rather than correlation alone/i);

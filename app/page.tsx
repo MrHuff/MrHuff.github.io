@@ -455,7 +455,7 @@ export default function Home() {
             <section className="section" id="work">
               <div className="section-heading split-heading">
                 <div>
-                  <h2>Research, by theme</h2>
+                  <h2>Papers, by theme</h2>
                   {researchMode === "predictive" && (
                     <p>The other half of the research record.</p>
                   )}
