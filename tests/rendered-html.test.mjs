@@ -59,10 +59,7 @@ test("server-renders Robert Hu's academic website", async () => {
     html,
     /Supervised by Dino Sejdinovic, Robin Evans, and Geoff Nicholls\./i,
   );
-  assert.match(
-    html,
-    /Away from research, I’m interested in MMA, spicy food, fine dining, real estate, and board games\./i,
-  );
+  assert.doesNotMatch(html, /Away from research/i);
   assert.match(html, /UE5M3 FP4 Block Scaling/i);
   assert.match(html, /Google Scholar/i);
   assert.match(html, /github\.com\/MrHuff/i);
