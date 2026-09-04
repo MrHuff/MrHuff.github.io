@@ -4,24 +4,24 @@
 
 import { useState } from "react";
 
+type CodeProject = {
+  name: string;
+  href: string;
+};
+
 type Publication = {
   year: string;
   venue: string;
   title: string;
   authors: string;
   href?: string;
-};
-
-type CodeProject = {
-  name: string;
-  href: string;
+  code?: CodeProject[];
 };
 
 type WorkGroup = {
   title: string;
   description: string;
   publications: Publication[];
-  code: CodeProject[];
 };
 
 const institutionMarks = {
@@ -93,9 +93,25 @@ const primaryWork: WorkGroup[] = [
       {
         year: "2026",
         venue: "arXiv",
+        title: "Hardware-Aware FP4 FlashAttention-4",
+        authors: "Robert Hu",
+        href: "https://arxiv.org/abs/2609.04105",
+        code: [
+          { name: "fp4-fa4", href: "https://github.com/MrHuff/fp4-fa4" },
+        ],
+      },
+      {
+        year: "2026",
+        venue: "arXiv",
         title: "UE5M3 FP4 Block Scaling for Stable Language Model Pretraining",
         authors: "Robert Hu, Carlo Luschi, Paul Balança",
         href: "https://arxiv.org/abs/2609.02846",
+        code: [
+          {
+            name: "ue5m3-fp4",
+            href: "https://github.com/MrHuff/ue5m3-fp4",
+          },
+        ],
       },
       {
         year: "2025",
@@ -111,6 +127,7 @@ const primaryWork: WorkGroup[] = [
         authors: "Robert Hu, Siu Lun Chau, Dino Sejdinovic, Joan Glaunès",
         href:
           "https://proceedings.neurips.cc/paper_files/paper/2022/hash/3b1f32693e9fe15c949a0742bf226803-Abstract-Conference.html",
+        code: [{ name: "F3M", href: "https://github.com/MrHuff/F3M" }],
       },
       {
         year: "2022",
@@ -118,12 +135,12 @@ const primaryWork: WorkGroup[] = [
         title: "Large Scale Tensor Regression Using Kernels and Variational Inference",
         authors: "Robert Hu, Geoff K. Nicholls, Dino Sejdinovic",
         href: "https://link.springer.com/article/10.1007/s10994-021-06067-7",
-      },
-    ],
-    code: [
-      {
-        name: "KernelFriedTensor",
-        href: "https://github.com/MrHuff/KernelFriedTensor",
+        code: [
+          {
+            name: "KernelFriedTensor",
+            href: "https://github.com/MrHuff/KernelFriedTensor",
+          },
+        ],
       },
     ],
   },
@@ -139,6 +156,12 @@ const primaryWork: WorkGroup[] = [
           "A Kernel Test for Causal Association via Noise Contrastive Backdoor Adjustment",
         authors: "Robert Hu, Dino Sejdinovic, Robin J. Evans",
         href: "https://www.jmlr.org/papers/v25/21-1409.html",
+        code: [
+          {
+            name: "kgformula",
+            href: "https://github.com/MrHuff/kgformula",
+          },
+        ],
       },
       {
         year: "2024",
@@ -147,6 +170,12 @@ const primaryWork: WorkGroup[] = [
           "Doubly Robust Kernel Statistics for Testing Distributional Treatment Effects",
         authors: "Jake Fawkes, Robert Hu, Robin J. Evans, Dino Sejdinovic",
         href: "https://openreview.net/forum?id=5g5zFVj33K",
+        code: [
+          {
+            name: "DR_distributional_test",
+            href: "https://github.com/Jakefawkes/DR_distributional_test",
+          },
+        ],
       },
       {
         year: "2023",
@@ -155,6 +184,7 @@ const primaryWork: WorkGroup[] = [
         authors: "Robert Hu, Dino Sejdinovic",
         href:
           "https://www.sciencedirect.com/science/article/pii/S277241582200027X",
+        code: [{ name: "DIF", href: "https://github.com/MrHuff/DIF" }],
       },
       {
         year: "2022",
@@ -164,6 +194,19 @@ const primaryWork: WorkGroup[] = [
         authors: "Robert Hu",
         href:
           "https://ora.ox.ac.uk/objects/uuid%3A6a5773e7-2fea-4914-a693-05a55c8b3f5d",
+        code: [
+          { name: "DIF", href: "https://github.com/MrHuff/DIF" },
+          {
+            name: "kgformula",
+            href: "https://github.com/MrHuff/kgformula",
+          },
+          {
+            name: "KernelFriedTensor",
+            href: "https://github.com/MrHuff/KernelFriedTensor",
+          },
+          { name: "Sumo-Net", href: "https://github.com/MrHuff/Sumo-Net" },
+          { name: "F3M", href: "https://github.com/MrHuff/F3M" },
+        ],
       },
       {
         year: "2021",
@@ -172,12 +215,12 @@ const primaryWork: WorkGroup[] = [
           "Robust Deep Interpretable Features for Binary Image Classification",
         authors: "Robert Hu, Dino Sejdinovic",
         href: "https://septentrio.uit.no/index.php/nldl/article/view/5708",
-      },
-    ],
-    code: [
-      {
-        name: "kgformula",
-        href: "https://github.com/MrHuff/kgformula",
+        code: [
+          {
+            name: "DIF-NLDL",
+            href: "https://github.com/MrHuff/DIF-NLDL",
+          },
+        ],
       },
     ],
   },
@@ -202,6 +245,7 @@ const predictiveWork: WorkGroup = {
       authors: "Veit D. Wild*, Robert Hu*, Dino Sejdinovic",
       href:
         "https://proceedings.neurips.cc/paper_files/paper/2022/hash/18210aa6209b9adfc97b8c17c3741d95-Abstract-Conference.html",
+      code: [{ name: "GWI", href: "https://github.com/MrHuff/GWI" }],
     },
     {
       year: "2022",
@@ -210,6 +254,12 @@ const predictiveWork: WorkGroup = {
       authors: "Robert Hu*, Siu Lun Chau*, Jaime Ferrando Huertas, Dino Sejdinovic",
       href:
         "https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1656d20067ca7c84a33785c4083a75e-Abstract-Conference.html",
+      code: [
+        {
+          name: "PREF-SHAP",
+          href: "https://github.com/MrHuff/PREF-SHAP",
+        },
+      ],
     },
     {
       year: "2022",
@@ -218,6 +268,12 @@ const predictiveWork: WorkGroup = {
       authors: "Siu Lun Chau, Robert Hu, Javier González, Dino Sejdinovic",
       href:
         "https://proceedings.neurips.cc/paper_files/paper/2022/hash/54bb63eaec676b87a2278a22b1bd02a2-Abstract-Conference.html",
+      code: [
+        {
+          name: "RKHS-SHAP",
+          href: "https://github.com/Chau999/RKHS-SHAP",
+        },
+      ],
     },
     {
       year: "2022",
@@ -226,12 +282,10 @@ const predictiveWork: WorkGroup = {
         "Survival Regression with Proper Scoring Rules and Monotonic Neural Networks",
       authors: "David Rindt*, Robert Hu*, David Steinsaltz, Dino Sejdinovic",
       href: "https://proceedings.mlr.press/v151/rindt22a.html",
+      code: [
+        { name: "Sumo-Net", href: "https://github.com/MrHuff/Sumo-Net" },
+      ],
     },
-  ],
-  code: [
-    { name: "PREF-SHAP", href: "https://github.com/MrHuff/PREF-SHAP" },
-    { name: "GWI", href: "https://github.com/MrHuff/GWI" },
-    { name: "Sumo-Net", href: "https://github.com/MrHuff/Sumo-Net" },
   ],
 };
 
@@ -364,16 +418,17 @@ function PublicationList({ publications }: { publications: Publication[] }) {
             )}
           </h4>
           <p className="publication-authors">{publication.authors}</p>
+          {publication.code && <PublicationCode projects={publication.code} />}
         </li>
       ))}
     </ol>
   );
 }
 
-function RelatedCode({ projects }: { projects: CodeProject[] }) {
+function PublicationCode({ projects }: { projects: CodeProject[] }) {
   return (
-    <p className="related-code">
-      <span>Related code</span>{" "}
+    <p className="publication-code">
+      <span>Code</span>{" "}
       {projects.map((project, index) => (
         <span key={project.name}>
           {index > 0 ? " · " : ""}
@@ -571,7 +626,6 @@ export default function Home() {
                       <h3>{group.title}</h3>
                       <p className="group-description">{group.description}</p>
                       <PublicationList publications={group.publications} />
-                      <RelatedCode projects={group.code} />
                     </article>
                   ))}
                 </div>
@@ -586,7 +640,6 @@ export default function Home() {
                       {predictiveWork.description}
                     </p>
                     <PublicationList publications={predictiveWork.publications} />
-                    <RelatedCode projects={predictiveWork.code} />
                   </article>
                 </div>
               </div>

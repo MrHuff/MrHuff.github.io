@@ -335,12 +335,13 @@ h2 {
   line-height: 1.38;
 }
 
-.related-code {
-  margin: 14px 0 0;
+.publication-code {
+  margin: 5px 0 0;
   font-size: 13px;
+  line-height: 1.45;
 }
 
-.related-code > span:first-child {
+.publication-code > span:first-child {
   margin-right: 5px;
   color: var(--muted);
 }
