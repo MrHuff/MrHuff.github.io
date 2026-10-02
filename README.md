@@ -44,11 +44,12 @@ The publication titles link to
 ## Posts
 
 The `/posts/` page lives in `app/posts/page.tsx` and shares the navigation in
-`app/components/site-header.tsx` with the homepage. It starts with a simple
-empty state. When adding a first post, create its page under
-`app/posts/<slug>/page.tsx` and replace the empty state with a dated link and
-summary. Both the index and individual posts are exported by `npm run
-build:pages` for GitHub Pages.
+`app/components/site-header.tsx` with the homepage. It lists posts with a date,
+title and short summary. The first post, [The case for FP4](https://mrhuff.github.io/posts/the-case-for-fp4/),
+is dated 2 October 2026 and lives in `app/posts/the-case-for-fp4/page.tsx`.
+Add future posts under `app/posts/<slug>/page.tsx` and add a dated link and
+summary to the index. Both the index and individual posts are exported by
+`npm run build:pages` for GitHub Pages.
 
 The Pages build exports without trailing-slash redirects, then
 `scripts/prepare-pages.mjs` adds directory indexes for URLs such as `/posts/`.

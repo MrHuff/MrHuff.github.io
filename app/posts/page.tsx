@@ -46,12 +46,22 @@ export default function Posts() {
             <h1>Posts</h1>
             <p className="posts-description">Notes on research and code.</p>
           </div>
-          <section className="posts-empty" aria-labelledby="posts-heading">
-            <h2 id="posts-heading">No posts yet.</h2>
-            <p>
-              In the meantime, you can <a href="/#work">explore my research</a>.
-            </p>
-          </section>
+          <ul className="post-list">
+            <li>
+              <article>
+                <p className="post-meta">
+                  <time dateTime="2026-10-02">2 October 2026</time>
+                </p>
+                <h2>
+                  <a href="/posts/the-case-for-fp4/">The case for FP4</a>
+                </h2>
+                <p className="post-excerpt">
+                  The hardware, numerics and kernel work behind training and
+                  serving LLMs in FP4.
+                </p>
+              </article>
+            </li>
+          </ul>
         </main>
         <footer>
           <p>Robert Hu · Machine learning researcher · London</p>

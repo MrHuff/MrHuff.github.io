@@ -133,7 +133,7 @@ a:hover {
 }
 
 .posts-intro,
-.posts-empty {
+.post-list {
   max-width: 680px;
 }
 
@@ -143,19 +143,118 @@ a:hover {
   font-size: 18px;
 }
 
-.posts-empty {
+.post-list {
   margin-top: 48px;
-  padding: 28px 0;
+  margin-bottom: 0;
+  padding: 0;
   border-top: 2px solid var(--matcha);
+  list-style: none;
 }
 
-.posts-empty h2 {
+.post-list > li {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-list h2 {
   font-size: 24px;
 }
 
-.posts-empty p {
+.post-meta {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.post-list .post-meta {
+  margin: 0 0 8px;
+}
+
+.post-excerpt {
   margin: 10px 0 0;
   color: var(--muted);
+}
+
+.post-main {
+  width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
+  padding: clamp(36px, 6vw, 56px) 0 72px;
+}
+
+.post-back {
+  font-size: 14px;
+}
+
+.post-header {
+  margin: 30px 0 36px;
+}
+
+.post-header h1 {
+  font-size: clamp(38px, 6vw, 52px);
+  line-height: 1.12;
+}
+
+.post-body {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.post-body p {
+  margin: 0 0 24px;
+}
+
+.post-levers {
+  margin: 0 0 28px;
+  padding-left: 1.3em;
+  list-style: disc;
+}
+
+.post-levers li {
+  margin: 0 0 18px;
+  padding-left: 4px;
+}
+
+.post-body sup {
+  margin-left: 2px;
+  font-size: 0.7em;
+  line-height: 0;
+}
+
+.post-notes {
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.post-notes ol,
+.post-references ol {
+  margin: 0;
+  padding-left: 1.6em;
+  list-style: decimal;
+}
+
+.post-notes li {
+  margin-bottom: 14px;
+  padding-left: 3px;
+}
+
+.post-references {
+  margin-top: 30px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.post-references h2 {
+  margin-bottom: 18px;
+  font-size: 25px;
+}
+
+.post-references li {
+  margin-bottom: 9px;
+  padding-left: 3px;
 }
 
 .hero {
