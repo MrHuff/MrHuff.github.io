@@ -25,10 +25,9 @@ primary publication records.
 
 ## Technical reports
 
-The two Graphcore Research technical reports are listed with the date
-3 September 2026, matching their early-September public report history.
-Their PDFs are hosted in `public/papers/` and their publication entries in
-`app/page.tsx` link to the corresponding code repositories.
+The two papers use the same format as the other arXiv publications: year,
+arXiv venue, linked title, authors, and code links. The original Graphcore
+technical-report PDFs remain hosted in `public/papers/` at their existing URLs.
 
 - `fast-polynomial-transcendentals.pdf`: the attributed Graphcore report from
   `MrHuff/fast-polynomial-transcendentals` at `e022698`, copied unchanged from
@@ -38,12 +37,9 @@ Their PDFs are hosted in `public/papers/` and their publication entries in
   `docs/technical_report/main.tex` and its existing figures. This source includes
   the branding update made after release `v0.2.3`.
 
-The publication titles and explicit arXiv links point to
+The publication titles link to
 [2610.00049](https://arxiv.org/abs/2610.00049) (polynomial transcendentals) and
-[2610.00053](https://arxiv.org/abs/2610.00053) (FP4 fusion). The original report
-dates, Graphcore PDF downloads, and code links remain available. These dates
-refer to the technical reports; arXiv records the fusion submission on
-4 September 2026.
+[2610.00053](https://arxiv.org/abs/2610.00053) (FP4 fusion).
 
 ## Posts
 

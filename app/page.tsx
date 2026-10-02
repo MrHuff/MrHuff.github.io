@@ -12,12 +12,10 @@ type CodeProject = {
 
 type Publication = {
   year: string;
-  date?: string;
   venue: string;
   title: string;
   authors: string;
   href?: string;
-  pdf?: string;
   code?: CodeProject[];
 };
 
@@ -95,12 +93,10 @@ const primaryWork: WorkGroup[] = [
     publications: [
       {
         year: "2026",
-        date: "2026-09-03",
-        venue: "Graphcore Research · Technical report",
+        venue: "arXiv",
         title: "Fast Polynomial Transcendentals for LLMs",
         authors: "Robert Hu",
         href: "https://arxiv.org/abs/2610.00049",
-        pdf: "/papers/fast-polynomial-transcendentals.pdf",
         code: [
           {
             name: "fast-polynomial-transcendentals",
@@ -110,12 +106,10 @@ const primaryWork: WorkGroup[] = [
       },
       {
         year: "2026",
-        date: "2026-09-03",
-        venue: "Graphcore Research · Technical report",
+        venue: "arXiv",
         title: "Format-Aware Fusion for Fast FP4 Pretraining",
         authors: "Robert Hu",
         href: "https://arxiv.org/abs/2610.00053",
-        pdf: "/papers/mfu-fp4-training.pdf",
         code: [
           {
             name: "mfu-fp4-training",
@@ -439,26 +433,11 @@ function PublicationList({ publications }: { publications: Publication[] }) {
       {publications.map((publication) => (
         <li key={`${publication.year}-${publication.title}`}>
           <p className="publication-meta">
-            {publication.date ? (
-              <time dateTime={publication.date}>
-                {new Date(`${publication.date}T00:00:00Z`).toLocaleDateString(
-                  "en-GB",
-                  {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                    timeZone: "UTC",
-                  },
-                )}
-              </time>
-            ) : (
-              publication.year
-            )}{" "}
-            · {publication.venue}
+            {publication.year} · {publication.venue}
           </p>
           <h4>
-            {publication.href || publication.pdf ? (
-              <ExternalLink href={(publication.href || publication.pdf)!}>
+            {publication.href ? (
+              <ExternalLink href={publication.href}>
                 {publication.title}
               </ExternalLink>
             ) : (
@@ -466,17 +445,6 @@ function PublicationList({ publications }: { publications: Publication[] }) {
             )}
           </h4>
           <p className="publication-authors">{publication.authors}</p>
-          {publication.pdf && (
-            <p className="publication-code">
-              {publication.href?.startsWith("https://arxiv.org/abs/") && (
-                <>
-                  <ExternalLink href={publication.href}>arXiv</ExternalLink>
-                  {" · "}
-                </>
-              )}
-              <ExternalLink href={publication.pdf}>PDF</ExternalLink>
-            </p>
-          )}
           {publication.code && <PublicationCode projects={publication.code} />}
         </li>
       ))}
