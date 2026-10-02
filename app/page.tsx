@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
+import SiteHeader from "./components/site-header";
 
 type CodeProject = {
   name: string;
@@ -98,6 +99,7 @@ const primaryWork: WorkGroup[] = [
         venue: "Graphcore Research · Technical report",
         title: "Fast Polynomial Transcendentals for LLMs",
         authors: "Robert Hu",
+        href: "https://arxiv.org/abs/2610.00049",
         pdf: "/papers/fast-polynomial-transcendentals.pdf",
         code: [
           {
@@ -112,6 +114,7 @@ const primaryWork: WorkGroup[] = [
         venue: "Graphcore Research · Technical report",
         title: "Format-Aware Fusion for Fast FP4 Pretraining",
         authors: "Robert Hu",
+        href: "https://arxiv.org/abs/2610.00053",
         pdf: "/papers/mfu-fp4-training.pdf",
         code: [
           {
@@ -465,6 +468,12 @@ function PublicationList({ publications }: { publications: Publication[] }) {
           <p className="publication-authors">{publication.authors}</p>
           {publication.pdf && (
             <p className="publication-code">
+              {publication.href?.startsWith("https://arxiv.org/abs/") && (
+                <>
+                  <ExternalLink href={publication.href}>arXiv</ExternalLink>
+                  {" · "}
+                </>
+              )}
               <ExternalLink href={publication.pdf}>PDF</ExternalLink>
             </p>
           )}
@@ -545,24 +554,7 @@ export default function Home() {
       </a>
 
       <div className="page">
-        <header className="site-header" id="top">
-          <a
-            className="site-title"
-            href="#top"
-            aria-label="Robert Hu, back to top"
-          >
-            Var hälsad
-            <span className="header-treat" role="img" aria-label="strawberry matcha">
-              🍓🍵
-            </span>
-          </a>
-          <nav aria-label="Primary navigation">
-            <a href="#research">Research</a>
-            <a href="#work">Work</a>
-            <a href="#background">Background</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </header>
+        <SiteHeader />
 
         <main id="main">
           <section className="hero" aria-labelledby="intro-title">

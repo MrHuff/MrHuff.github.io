@@ -114,6 +114,50 @@ a:hover {
   font-size: 14px;
 }
 
+.site-header nav a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--matcha);
+  text-decoration-thickness: 2px;
+}
+
+.posts-page {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+}
+
+.posts-main {
+  flex: 1;
+  padding: clamp(48px, 7vw, 72px) 0 80px;
+}
+
+.posts-intro,
+.posts-empty {
+  max-width: 680px;
+}
+
+.posts-description {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.posts-empty {
+  margin-top: 48px;
+  padding: 28px 0;
+  border-top: 2px solid var(--matcha);
+}
+
+.posts-empty h2 {
+  font-size: 24px;
+}
+
+.posts-empty p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 230px;
